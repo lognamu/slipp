@@ -44,6 +44,11 @@
 				</tr>
 			</thead>
 			<tbody>
+				{{^users}}
+				<tr>
+					<th class="text-center" colspan="3">회원이 존재하지 않습니다</th>
+				</tr>
+				{{/users}}
 				{{#users}}
 				<tr>
 					<th scope="row">{{id}}</th>
