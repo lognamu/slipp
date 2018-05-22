@@ -20,7 +20,7 @@ public class UserController {
 	
 	@GetMapping("/form")
 	public String signUp() {
-		return "/user/signup";
+		return "user/signup";
 	}
 	
 	@PostMapping("")
@@ -33,14 +33,14 @@ public class UserController {
 	@GetMapping("")
 	public String list(Model model) {
 		model.addAttribute("users", userRepository.findAll());
-		return "/user/list";
+		return "user/list";
 	}
 	
 	@GetMapping("/{idx}/form")
 	public String update(@PathVariable Long idx, Model model) {
 		User user = userRepository.getOne(idx);
 		model.addAttribute("user", user);
-		return "/user/update";
+		return "user/update";
 	}
 	
 	@PostMapping("/{idx}")
@@ -53,13 +53,13 @@ public class UserController {
 	
 	@GetMapping("/signin")
 	public String signIn() {
-		return "/user/signin";
+		return "user/signin";
 	}
 	
 	@GetMapping("/profile")
 	public String profile () {
 		
-		return "/user/profile";
+		return "user/profile";
 	}
 	
 }
